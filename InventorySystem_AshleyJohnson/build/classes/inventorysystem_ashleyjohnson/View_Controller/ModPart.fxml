@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorysystem_ashleyjohnson.View_Controller.ModPartController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Modify Part" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="15.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <GridPane alignment="CENTER_RIGHT" layoutY="60.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="75.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="partIDField" disable="true" promptText="Auto Gen - Disabled" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="partNameField" promptText="Part Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="partInStockField" promptText="Inv" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="partMaxField" promptText="Max" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="partMinField" promptText="Min" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="partSourceField" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="partPriceField" promptText="Price/Cost" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </TextField>
+            <Label text="ID" />
+            <Label text="Name" GridPane.rowIndex="1" />
+            <Label text="Inv" GridPane.rowIndex="2" />
+            <Label text="Price/Cost" GridPane.rowIndex="3" />
+            <Label text="Max" GridPane.rowIndex="4" />
+            <Label text="Min" GridPane.rowIndex="5" />
+            <Label fx:id="labelMod" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <ButtonBar layoutX="100.0" layoutY="246.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="25.0">
+        <buttons>
+          <Button fx:id="saveMod" mnemonicParsing="false" onAction="#handleSaveMod" text="Save" />
+            <Button fx:id="cancelMod" mnemonicParsing="false" onAction="#handleCancelMod" text="Cancel" />
+        </buttons>
+      </ButtonBar>
+      <ButtonBar layoutX="136.0" layoutY="20.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="10.0">
+         <buttons>
+            <RadioButton fx:id="inhouseMod" mnemonicParsing="false" onAction="#handleInhouseMod" text="In-house">
+               <toggleGroup>
+                  <ToggleGroup fx:id="partMFR" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="outsourcedMod" mnemonicParsing="false" onAction="#handleOutsourcedMod" text="Outsourced" toggleGroup="$partMFR" />
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
